@@ -9,7 +9,7 @@ This repository hosts the **[Atlas of AI Risks](https://social-dynamics.net/ai-r
 Illustration
 ------------
 
-Below is an illustration from our project, showcasing one of the many uses of facial recognition we explore:
+Below is an illustration from our visualization, showcasing one of the many uses of facial recognition we explore:
 
 ![AI Risks Illustration](https://raw.githubusercontent.com/sanja7s/Atlas_of_AI_Risks/main/visualization-code/assets/3.webp)
 
