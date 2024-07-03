@@ -1,0 +1,862 @@
+/* SCROLLAMA */
+#scrolly {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+}
+
+article {
+  position: relative;
+  padding: 0;
+  max-width: 48rem;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+figure {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background-color: white;
+  z-index: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.chart-labels {
+  pointer-events: none;
+  cursor: none;
+}
+
+.counter-labels {
+  font-size: 12px;
+}
+
+.circle-counter-label {
+  position: absolute;
+  font-size: 12px;
+  text-align: center;
+  bottom: -120px;
+  width: 44px;
+  background: white;
+  border-radius: 6px;
+}
+
+.step {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+  background-color: transparent;
+}
+
+.story-step {
+  color: black;
+  font-size: 12px;
+  position: relative;
+  bottom: 8px;
+}
+
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step.is-active p {
+  background-color: white;
+  color: #3b3b3b;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25); /* Example: Adds a shadow for emphasis */
+}
+
+.step p {
+  text-align: center;
+  padding: 24px;
+  font-size: 24px;
+  background-color: white;
+  color: #3b3b3b;
+  border: 2px solid black;
+  font-weight: normal;
+  pointer-events: all;
+}
+
+a {
+  box-shadow: 0 -7px 0 silver inset;
+  -webkit-box-shadow: 0 -7px 0 silver inset;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  transition: 0.5s;
+}
+
+a:visited,
+a:hover {
+  box-shadow: 0 -7px 0 crimson inset;
+  -webkit-box-shadow: 0 -7px 0 crimson inset;
+  text-decoration: none;
+}
+
+.habits {
+  box-shadow: 0 -7px 0 orange inset;
+  -webkit-box-shadow: 0 -7px 0 orange inset;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+::selection {
+  color: white;
+  background: black;
+}
+
+/* TSNE */
+.uses {
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+}
+
+.use-tooltip,
+div.tooltip {
+  text-align: center;
+  padding: 12px 12px !important;
+  font-weight: normal !important;
+  background: white !important;
+  border: 2px solid black;
+  box-shadow: var(--secondary-shadow) !important;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+div.use-tooltip {
+  position: absolute;
+  width: 200px;
+  z-index: 10000 !important;
+}
+
+.tooltip-image {
+  background-color: rgb(222, 222, 222);
+  height: 160px;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.tooltip-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  justify-content: center;
+}
+
+.impact-card {
+  color: black;
+  border: 2px solid black;
+  width: 520px;
+  max-height: 100%;
+  display: none;
+  padding: 24px;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.summary-sentence {
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding-left: 12px;
+  font-size: 16px;
+}
+
+.impact-card h5 {
+  font-weight: bold;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+#intro {
+  margin: 1rem auto;
+  text-align: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#intro h1 {
+  margin-bottom: 32px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+
+/* LEGEND */
+
+#legend-container {
+  margin-top: 8px;
+  margin-left: 2px;
+}
+
+.legend-item {
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.legend-item:hover > p {
+  font-weight: 500;
+}
+
+.legend-item:hover > .span-wrapper {
+  outline: 1.5px solid black;
+}
+
+.span-wrapper {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  /*outline: 1.5px solid black;*/
+}
+
+.span-legend {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.7;
+  outline: 0px solid black;
+}
+
+select, input {
+  font-size: 16px;
+  padding: 4px;
+  height: 32px;
+  border-color: black;
+  border-width: 1px;
+}
+
+select {
+  width: 320px;
+}
+
+input {
+  width: 290px;
+}
+
+.searchbar-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#clearSearch {
+  width: 32px;
+  height: 32px;
+  line-height: 16px;
+  font-size: 16px;
+  background: white;
+  border: 1px solid black;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+#clearSearch:hover {
+  background: black;
+  color: white;
+}
+
+select:active, input:active {
+  border-width: 1.5px;
+  border-color: black;
+}
+
+input:focus, select:focus {
+  /* Add your styles here */
+  border: 2px solid black; /* Example: Change border color to blue */
+  outline: none; /* Removes the default outline */
+}
+
+.accordion-toggle:focus {
+  /* Add your styles here */
+  border: none; /* Example: Change border color to blue */
+  outline: none; /* Removes the default outline */
+}
+
+.sidebar-wrapper {
+  position: absolute;
+  top: -30px;
+  pointer-events: none;
+}
+
+.sidebar {
+  margin-bottom: 24px;
+  color: black;
+  opacity: 0;
+}
+
+.accordion {
+  display: block;
+}
+
+.accordion-cell {
+  display: flex;
+  position: relative;
+  width: 42px;
+  border: 1px solid black;
+  padding: 8px;
+  transition-property: width;
+  transition-duration: 250ms;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.accordion-cell text {
+  font-size: 12px;
+  position: relative;
+  bottom: 6px;
+}
+
+.accordion-cell:hover {
+  outline: 1px solid black;
+}
+
+.accordion-toggle {
+  width: 26px;
+  height: 35px;
+  margin-right: 8px;
+  background-color: white;
+  /* display: block; */
+  padding: 0;
+  font-size: 22px;
+  /* background: white; */
+  /* border: none; */
+  justify-items: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* background: black; */
+  border: 2px solid white;
+}
+
+.searchbar {
+  height: 136px;
+}
+
+.dropdown {
+  height: 152px;
+}
+.howto  {
+  height: 46px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.howto > button {
+  background-color: white;
+  font-size: 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#circle-counter {
+  position: absolute;
+  left: -28px;
+}
+
+
+.accordion-cell:nth-child(1) {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.accordion-cell>h4 {
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  text-align: left;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  transition-property: left right transform;
+  transition-duration: 250ms;
+}
+
+.searchbar > h4 {
+  left: -16px;
+  top: 74px;
+}
+
+.dropdown > h4 {
+  left: -23px;
+  top: 80px;
+}
+
+.accordion-cell>.accordion-cell-content {
+  display: block;
+  margin: 0;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  overflow: hidden;
+}
+
+.expanded>.accordion-cell-content {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  pointer-events: all;
+}
+
+.expanded {
+  width: 372px;
+}
+
+.dropdown.expanded {
+  min-height: 152px;
+  height: max-content;
+}
+
+.howto.expanded {
+  height: max-content;
+}
+
+/* */
+.card-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+  width: 90%;
+}
+
+.card-description {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.card-image {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  border-radius: 4px;
+  background-color: silver;
+}
+
+.card-summary {
+  width: 75%;
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+.card-teaser {
+  background: #eee;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+
+
+.close-card {
+  z-index: 1000;
+  /*position: relative;*/
+  position: sticky; 
+  top: 0;
+  width: 28px;
+  height: 28px;
+  line-height: 16px;
+  font-size: 16px;
+  float: right;
+  background: white;
+  border: 2px solid black;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.close-card:hover {
+  background: black;
+  color: white;
+}
+
+
+.card-subheader {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+
+.card-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  text-wrap: pretty;
+}
+
+.risk-details {
+  margin-bottom: 10px;
+  flex: 2;
+}
+
+.risk-details p {
+  font-size: 16px;
+}
+
+.risk-icon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.capability {    
+  width: 20px;
+  height: 20px;
+  background-image: url('assets/gear.svg'); /* URL of the image */
+  background-size: cover; /* Scale the image to cover the entire div */
+  top: 2px;
+  position: relative;
+}
+
+.human-interaction {    
+  width: 20px;
+  height: 20px;
+  background-image: url('assets/human-interaction.svg'); /* URL of the image */
+  background-size: cover; /* Scale the image to cover the entire div */
+  top: 2px;
+  position: relative;
+}
+
+.systemic-impact {    
+  width: 20px;
+  height: 20px;
+  background-image: url('assets/systemic-impact.svg'); /* URL of the image */
+  background-size: cover; /* Scale the image to cover the entire div */
+  top: 2px;
+  position: relative;
+}
+
+.mitigations {    
+  width: 20px;
+  height: 20px;
+  background-image: url('assets/mitigations.svg'); /* URL of the image */
+  background-size: cover; /* Scale the image to cover the entire div */
+  top: 2px;
+  position: relative;
+}
+
+.risk-stakeholders {
+  flex: 1;
+}
+
+.stakeholders-label-wrapper {
+  transform: rotate(270deg);
+  transform-origin: left bottom;
+  width: 120px;
+  position: relative;
+  right: -65px;
+  top: 30px;
+}
+
+.stakeholder-label {
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+  margin-bottom: 12px;
+  font-size: 10px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 4px;
+  margin-right: 4px;
+  padding: 2px 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 1px solid white;
+}
+
+.tag:hover {
+  border: 1px solid black;
+}
+
+.stakeholder {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.stakeholder-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  border-left: 1px solid black;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: crimson; 
+  cursor: pointer;
+}
+
+.selected-use {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 3px;
+  margin-left: 3px;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  background-color: crimson;
+}
+
+.similar-use-1 {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: relative;
+  left: 3px;
+  background-color: silver;
+  mix-blend-mode: multiply;
+}
+
+.daily-use {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: orange;
+  mix-blend-mode: multiply;
+}
+
+.similar-use-2 {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  right: 7px;
+  border-radius: 50%;
+  background-color: silver;
+  mix-blend-mode: multiply;
+}
+
+.scroll-card {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+
+.selected-use:nth-child(1) {
+  background-color: crimson;
+}
+
+.selected-use:nth-child(2) {
+  background-color: RoyalBlue;
+}
+
+/* ARROW */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  font-size: 16px;
+}
+
+.scroll {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: relative;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+}
+.scroll::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  border-left: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(-45deg);
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+.click {
+  width: 36px;
+  height: 36px;
+  transform: rotate(-30deg);
+  margin-right: 8px;
+  position: relative;
+  top: 4px;
+}
+
+
+/*
+.impact-card > div:last-of-type > div:last-of-type  {
+  width: 316px;
+  text-wrap: pretty;
+}
+*/
+
+
+ul {
+  font-size: 16px;
+  padding-left: 30px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.prohibited {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 12px;
+  background-color: rgba(230, 79, 102);
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+}
+
+.high-risk {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 12px;
+  /*background-color: rgba(230, 79, 102);*/
+  background-color: gold;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+}
+
+.low-risk {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 12px;
+  background-color: rgba(65, 105, 225);
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+}
+
+li::marker {
+  content: '→ ';
+  font-size: 1em;
+}
+
+.tooltip-label {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.tooltip-label-span {
+  width: 18px!important;
+  height: 18px!important;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.tooltip-label-text {
+  width: calc(200px - 28px - 40px);
+  font-size: 12px;
+}
+
+.incident-link {
+  box-shadow: 0 -7px 0 white inset;
+  -webkit-box-shadow: 0 -7px 0 white inset;
+  margin-top: 12px;
+}

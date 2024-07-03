@@ -1,0 +1,281 @@
+:root {
+    --main-stroke-width: 2px;
+    --main-card-width: 270px;
+    --main-card-height: 460px;
+    --main-font-size: 16px;
+    --main-border-radius: 12px;
+    --main-border-width: 1px;
+    --main-padding: 28px;
+    --primary-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    --secondary-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    --button-border-radius: 20px;
+    --button-padding: 6px 30px;
+    --main-transition-duration: 0.5s;
+    --blue-primary: #005AFF;
+    --blue-secondary: #0049B4;
+    --gray-primary: #EBEBEB;
+    --gray-secondary: #757575;
+    --teal-primary: #23ABB6;
+    --teal-secondary: #6f9699;
+    --teal-tertiary: #005067;;
+    --pink-primary: #d4026b;
+    --arrow-border: 1px solid black;
+  }
+  
+
+
+.shepherd-content div {
+    width: 95%;
+    margin-bottom: 12px;
+  }
+
+.shepherd-footer {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.shepherd-footer span {
+    order: -1;
+    /* Display the <span> first */
+    flex: 1;
+    /* Let the span take all the available space on the left */
+}
+
+.shepherd-cancel-icon {
+    background: transparent;
+    border: none;
+    color: var(--gray-secondary);
+    cursor: pointer;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    transition: .5s ease;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    line-height: 24px;
+}
+
+.shepherd-cancel-icon > span {
+    font-size: 24px;
+}
+
+.shepherd-cancel-icon:hover {
+    color: black;
+    background: var(--gray-primary);
+}
+
+.shepherd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding: 0px!important;
+    font-size: 16px;
+}
+
+.shepherd-progress {
+    font-size: 12px;
+    color: var(--gray-secondary);
+}
+
+.shepherd-title {
+    font-size: 12px;
+}
+
+.shepherd-text {
+    color: black;
+    font-size: 24px;
+}
+
+.shepherd-text p {
+    margin-top: 0
+}
+
+.shepherd-text p:last-child {
+    margin-bottom: 0
+}
+
+.shepherd-content {
+    outline: none;
+    padding: 16px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.shepherd-element {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: var(--primary-shadow);
+    max-width: 400px;
+    opacity: 0;
+    outline: none;
+    transition: opacity .3s, visibility .3s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+    margin: 18px !important;
+}
+
+.shepherd-enabled.shepherd-element {
+    opacity: 1;
+    visibility: visible
+}
+
+.shepherd-element[data-popper-reference-hidden]:not(.shepherd-centered) {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden
+}
+
+.shepherd-element,
+.shepherd-element *,
+.shepherd-element :after,
+.shepherd-element :before {
+    box-sizing: border-box
+}
+
+.shepherd-arrow,
+.shepherd-arrow:before {
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    z-index: -1
+}
+
+.shepherd-arrow:before {
+    background: black;
+    content: "";
+    transform: rotate(45deg);
+}
+
+.shepherd-element.shepherd-centered>.shepherd-arrow {
+    opacity: 0
+}
+
+/* Top alignment */
+.shepherd-element[data-popper-placement^=top]>.shepherd-arrow {
+    bottom: -8px;
+}
+
+.shepherd-element[data-popper-placement^=top]>.shepherd-arrow:before {
+    border-right: var(--arrow-border);
+    border-bottom: var(--arrow-border);
+    transform: rotate(45deg) translateX(-12px) translateY(12px);
+}
+
+/* Left alignment */
+.shepherd-element[data-popper-placement^=left]>.shepherd-arrow {
+    right: -8px;
+}
+
+.shepherd-element[data-popper-placement^=left]>.shepherd-arrow:before {
+    border-right: var(--arrow-border);
+    border-top: var(--arrow-border);
+}
+
+/* Right alignment */
+.shepherd-element[data-popper-placement^=right]>.shepherd-arrow {
+    left: -8px;
+}
+
+.shepherd-element[data-popper-placement^=right]>.shepherd-arrow:before {
+    border-left: var(--arrow-border);
+    border-bottom: var(--arrow-border);
+}
+
+/* Bottom alignment */
+.shepherd-element[data-popper-placement^=bottom]>.shepherd-arrow {
+    top: -8px
+}
+.shepherd-element[data-popper-placement^=bottom]>.shepherd-arrow:before {
+    border-left: var(--arrow-border);
+    border-top: var(--arrow-border);
+    transform: rotate(45deg) translateX(-14px) translateY(14px);
+}
+
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target,
+.shepherd-target-click-disabled.shepherd-enabled.shepherd-target * {
+    pointer-events: none
+}
+
+.shepherd-modal-overlay-container {
+    height: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: all .3s ease-out, height 0ms .3s, opacity .3s 0ms;
+    width: 100vw;
+    z-index: 9997
+}
+
+.shepherd-modal-overlay-container.shepherd-modal-is-visible {
+    height: 100vh;
+    opacity: 0.95;
+    transform: translateZ(0);
+    transition: all .3s ease-out, height 0s 0s, opacity .3s 0s;
+    fill: white;
+}
+
+.shepherd-modal-overlay-container.shepherd-modal-is-visible path {
+    pointer-events: all
+}
+
+.onboarding-button {
+    color: white;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 6px;
+    outline: none;
+    border: 2px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.onboarding-button-final {
+    color: white;
+    height: 32px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 6px;
+    outline: none;
+    border: 2px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.onboarding-button:hover {
+    background-color: white;
+    color:black;
+
+.repeat {
+    padding: 6px 18px;
+    margin-right: auto;
+}
+
+.start {
+    padding: 6px 18px;
+}
+
+.highlight-guideline {
+    border: 1px solid black;
+    box-shadow: var(--primary-shadow);
+}
+
+.highlight-button {
+    border: 1px solid black;
+    box-shadow: var(--primary-shadow);
+}
+
+.highlight-input  {
+    border: 1px solid black;
+    box-shadow: var(--primary-shadow);
+    border-radius: 4px;
+
+}
